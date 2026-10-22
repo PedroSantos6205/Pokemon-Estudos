@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha 1vB</title>
+    <link rel="icon" type="img/jpg" href="../img/icone.jpg">
+    <link rel="stylesheet" href="../css/batalha-1vb.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header id="topo-pagina">
+
+        <div class="logo">
+            <h1>Pokémon Study</h1>
+        </div>
+
+        <div class="botoes-header">
+
+            <button id="modo" class="botao-modo" type="button">
+                ☀️ / 🌙
+            </button>
+
+            <button class="menu-voltar">
+                <a href="../index.html">Menu</a>
+            </button>
+
+        </div>
+
+    </header>
+
+
+     <!-- ================================= -->
+    <!-- SELEÇÃO DE POKÉMON                -->
+    <!-- ================================= -->
+
+    <main id="selecao-pokemon" class="selecao-pokemon">
+
+        <h2>Escolha seu time Pokémon</h2>
+
+        <p class="texto-selecao">
+            Escolha 6 Pokémon para começar a batalha.
+        </p>
+        <p class="aviso-simplificacao">Aviso: esta é uma simulação educativa simplificada e não representa uma batalha oficial de Pokémon. Atributos, habilidades, itens, formas e efeitos dos golpes podem diferir das regras oficiais.</p>
+
+        <!-- ALTERADO: os temas agora ficam dentro do container de seleção. -->
+        <section class="selecao-temas-estudo" aria-label="Seleção do tema de estudos">
+            <h3>Escolha um tema de estudos:</h3>
+            <button class="TemaDeEstudos" id="Vestibulinho-Etec" type="button">
+                Vestibulinho Etec
+            </button>
+            <button class="TemaDeEstudos" id="JavaScript" type="button">
+                JavaScript
+            </button>
+            <button class="TemaDeEstudos" id="HTML" type="button">
+                HTML
+            </button>
+            <button class="TemaDeEstudos" id="Facil" type="button">
+                Fácil
+            </button>
+        </section>
+
+
+        <section class="lista-pokemon">
+
+            <button class="pokemon-opcao" data-pokemon="Pikachu">
+                <span>Pikachu</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Clefairy">
+                <span>Clefairy</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Charizard">
+                <span>Charizard</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Blastoise">
+                <span>Blastoise</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Venusaur">
+                <span>Venusaur</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Lucario">
+                <span>Lucario</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Garchomp">
+                <span>Garchomp</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Gengar">
+                <span>Gengar</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Dragonite">
+                <span>Dragonite</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Pidgeot Mega">
+                <span>Pidgeot Mega</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Greninja">
+                <span>Greninja</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Tyranitar">
+                <span>Tyranitar</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Metagross">
+                <span>Metagross</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Eevee">
+                <span>Eevee</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Snorlax">
+                <span>Snorlax</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Gardevoir">
+                <span>Gardevoir</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Mewtwo">
+                <span>Mewtwo</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Sceptile">
+                <span>Sceptile</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Blaziken">
+                <span>Blaziken</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Infernape">
+                <span>Infernape</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Zoroark">
+                <span>Zoroark</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Mimikyu">
+                <span>Mimikyu</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Jigglypuff">
+                <span>Jigglypuff</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Mawile">
+                <span>Mawile</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Tinkaton">
+                <span>Tinkaton</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Scizor">
+                <span>Scizor</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Scyther">
+                <span>Scyther</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Ninjask">
+                <span>Ninjask</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Golisopode">
+                <span>Golisopode</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Kingambit">
+                <span>Kingambit</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Obstagoon">
+                <span>Obstagoon</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Komala">
+                <span>Komala</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Xerneas">
+                <span>Xerneas</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Yveltal">
+                <span>Yveltal</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Zapdos">
+                <span>Zapdos</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Articuno">
+                <span>Articuno</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Moltres">
+                <span>Moltres</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Rayquaza Mega">
+                <span>Rayquaza Mega</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Groudon Primal">
+                <span>Groudon Primal</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Kyogre Primal">
+                <span>Kyogre Primal</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Meowth">
+                <span>Meowth</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Swampert">
+                <span>Swampert</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Cloyster">
+                <span>Cloyster</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Mew">
+                <span>Mew</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Kommo-o">
+                <span>Kommo-o</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Koraidon">
+                <span>Koraidon</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Miraidon">
+                <span>Miraidon</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Kangaskhan">
+                <span>Kangaskhan</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Ceruledge">
+                <span>Ceruledge</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Goodra">
+                <span>Goodra</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Goodra Hisui">
+                <span>Goodra Hisui</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Zoroark Hisui">
+                <span>Zoroark Hisui</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Marowak">
+                <span>Marowak</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Incineroar">
+                <span>Incineroar</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Decidueye">
+                <span>Decidueye</span>
+            </button>
+
+            <button class="pokemon-opcao" data-pokemon="Primarina">
+                <span>Primarina</span>
+            </button>
+
+        </section>
+
+        <!-- NOVO: confirma a equipe após permitir desfazer escolhas. -->
+        <button id="btn-iniciar-batalha" class="btn-iniciar-batalha" type="button" disabled>
+            Iniciar batalha (0/6)
+        </button>
+        <button id="btn-retornar-batalha" class="botao-cancelar-troca" type="button" style="display:none">Voltar à batalha</button>
+
+    </main>
+
+<!-- ÁREA PRINCIPAL DA BATALHA -->
+    <main id="arena-batalha" class="arena">
+
+
+        <!-- ÁREA DO BOT -->
+        <section class="lado-bot">
+
+            <div class="informacoes-pokemon">
+
+                <div class="nome-nivel">
+                    <span id="nome-bot">Pokémon</span>
+                    <span id="nivel-bot">Lv. 50</span>
+                </div>
+
+                <p id="detalhes-bot" class="detalhes-status-pokemon">Status: Normal</p>
+
+                <div class="barra-hp">
+                    <div id="hp-bot" class="hp-atual"></div>
+                </div>
+
+                <p id="texto-hp-bot">100 / 100</p>
+                    <p class="habilidade-pokemon" id="bot-habilidade">Habilidade: Sem habilidade</p>
+                    <div class="status-visual-pokemon" id="bot-status-visual" hidden></div>
+
+                <p id="contador-time-bot" class="contador-time-bot">Pokémon restantes: 6/6</p>
+
+            </div>
+
+
+            <div class="pokemon bot">
+                <img id="imagem-bot" src="" alt="Pokémon adversário">
+            </div>
+
+        </section>
+
+
+
+        <!-- ÁREA DO JOGADOR -->
+        <section class="lado-jogador">
+
+            <div class="pokemon jogador">
+                <img id="imagem-jogador" src="" alt="Pokémon do jogador">
+            </div>
+
+
+            <div class="informacoes-pokemon">
+
+                <div class="nome-nivel">
+                    <span id="nome-jogador">Pokémon</span>
+                    <span id="nivel-jogador">Lv. 50</span>
+                </div>
+
+                <p id="detalhes-jogador" class="detalhes-status-pokemon">Status: Normal</p>
+
+                <div class="barra-hp">
+                    <div id="hp-jogador" class="hp-atual"></div>
+                </div>
+
+                <p id="texto-hp-jogador">100 / 100</p>
+                    <p class="habilidade-pokemon" id="jogador-habilidade">Habilidade: Sem habilidade</p>
+                    <div class="status-visual-pokemon" id="jogador-status-visual" hidden></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CAIXA DE MENSAGEM -->
+        <section class="caixa-mensagem">
+
+            <p id="mensagem-batalha">
+                O que você fará?
+            </p>
+
+        </section>
+
+
+
+        <!-- MENU PRINCIPAL -->
+        <section class="menu-batalha">
+
+            <button id="btn-lutar">
+                Lutar
+            </button>
+
+            <button id="btn-pokemon">
+                Pokémon
+            </button>
+
+            <button id="btn-mochila" type="button" disabled aria-label="Mochila indisponível neste modo" title="Itens ainda não implementados nesta batalha.">
+                Mochila indisponível
+            </button>
+
+            <button id="btn-fugir">
+                Fugir
+            </button>
+
+        </section>
+
+
+
+        <!-- MENU DE GOLPES -->
+        <section id="menu-golpes" class="menu-golpes">
+
+            <button id="golpe-1">
+                Golpe 1
+            </button>
+
+            <button id="golpe-2">
+                Golpe 2
+            </button>
+
+            <button id="golpe-3">
+                Golpe 3
+            </button>
+
+            <button id="golpe-4">
+                Golpe 4
+            </button>
+
+            <button id="golpe-5" style="display:none">
+                Golpe 5
+            </button>
+
+            <button id="golpe-6" style="display:none">
+                Golpe 6
+            </button>
+
+            <button id="btn-voltar">
+                Voltar
+            </button>
+
+        </section>
+
+
+
+        <!-- ============================= -->
+        <!-- ÁREA DA QUESTÃO                -->
+        <!-- ============================= -->
+
+        <section id="area-questao" class="area-questao">
+
+            <div class="questao">
+
+                <h2>Questão</h2>
+
+                <p id="texto-questao">
+                    Pergunta aparecerá aqui.
+                </p>
+
+            </div>
+
+
+            <!-- ALTERNATIVAS -->
+
+            <div class="alternativas">
+
+                <button id="alternativa-0">
+                    Alternativa A
+                </button>
+
+                <button id="alternativa-1">
+                    Alternativa B
+                </button>
+
+                <button id="alternativa-2">
+                    Alternativa C
+                </button>
+
+                <button id="alternativa-3">
+                    Alternativa D
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer id="rodape-pagina">
+
+        <h5>
+            Pokémon Study Battle. Trabalho sem fins lucrativos. © Todos os direitos reservados.
+        </h5>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <!-- ALTERADO: carrega a versão do JavaScript enviada para integração. -->
+    <script src="../js/pokemons.js"></script>
+    <script src="../js/efeitos-status-pokemon.js"></script>
+    <script src="../js/batalha-1vb.js"></script>
+    <!-- Sistema complementar de habilidades; carregado após a batalha principal. -->
+    <script src="../js/habilits.js"></script>
+    
+
+    <a id="atalho-scroll" class="atalho-scroll" href="#rodape-pagina" aria-label="Ir ao rodapé">↓ Ir ao rodapé</a>
+    <script src="../js/atalhos-pagina.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

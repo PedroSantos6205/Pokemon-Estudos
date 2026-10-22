@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Study — Batalha 2vB</title>
+    <link rel="icon" type="image/jpeg" href="../img/icone.jpg">
+    <link rel="stylesheet" href="../css/batalha-2vb.css">
+</head>
+<body>
+    <!-- Cabeçalho: nome do modo, alternância de tema e navegação de volta ao menu. -->
+    <header id="topo-pagina">
+        <div class="logo"><h1>Pokémon Study — Batalha 2vB</h1></div>
+        <div class="botoes-header">
+            <button id="modo" class="botao-modo" type="button">☀️ / 🌙</button>
+            <button class="menu-voltar" type="button"><a href="../index.html">Menu</a></button>
+        </div>
+    </header> 
+    <!-- Preparação: cada jogador escolhe um tema e uma equipe de seis Pokémon. -->
+    <main id="selecao-pokemon" class="selecao-pokemon">
+        <h2>Prepare a dupla de jogadores</h2>
+        <p class="texto-selecao">Cada jogador escolhe um tema de estudos e seis Pokémon. Clique novamente em um selecionado para removê-lo.</p>
+        <p class="aviso-simplificacao">Aviso: esta é uma simulação educativa simplificada e não representa uma batalha oficial de Pokémon. Atributos, habilidades, itens, formas e efeitos dos golpes podem diferir das regras oficiais.</p>
+        <section class="selecao-temas-estudo" aria-label="Tema de estudos">
+            <h3 id="titulo-tema">Tema do Jogador 1</h3>
+            <button class="TemaDeEstudos" id="Vestibulinho-Etec" type="button">Vestibulinho Etec</button>
+            <button class="TemaDeEstudos" id="JavaScript" type="button">JavaScript</button>
+            <button class="TemaDeEstudos" id="HTML" type="button">HTML</button>
+            <button class="TemaDeEstudos" id="Facil" type="button">Fácil</button>
+        </section>
+        <p id="resumo-escolhas" class="resumo-escolhas">J1: tema pendente · Pokémon pendente | J2: tema pendente · Pokémon pendente</p>
+        <section id="lista-pokemon" class="lista-pokemon" aria-label="Pokémon disponíveis"></section>
+        <button id="btn-iniciar-batalha" class="btn-iniciar-batalha" type="button" disabled>Escolher tema e Pokémon</button>
+    </main>
+
+    <!-- Arena: quatro espaços de combate, um para cada participante. -->
+    <main id="arena-batalha" class="arena arena-2vb" aria-live="polite">
+        <section class="campo-combate" aria-label="Pokémon em batalha">
+            <article class="combatente" id="combatente-bot-1">
+                <div class="informacoes-pokemon"><span class="rotulo-jogador">Bot 1</span><div class="nome-nivel"><span id="nome-bot-1">Pokémon</span><span id="nivel-bot-1">Lv. 50</span></div><div class="barra-hp"><div id="hp-bot-1" class="hp-atual"></div></div><p id="texto-hp-bot-1">0 / 0</p>
+                    <p class="habilidade-pokemon" id="bot-1-habilidade">Habilidade: Sem habilidade</p>
+                    <div class="status-visual-pokemon" id="bot-1-status-visual" hidden></div></div>
+                <div class="pokemon bot"><img id="imagem-bot-1" src="" alt="Pokémon do Bot 1"></div>
+            </article>
+            <article class="combatente" id="combatente-bot-2">
+                <div class="informacoes-pokemon"><span class="rotulo-jogador">Bot 2</span><div class="nome-nivel"><span id="nome-bot-2">Pokémon</span><span id="nivel-bot-2">Lv. 50</span></div><div class="barra-hp"><div id="hp-bot-2" class="hp-atual"></div></div><p id="texto-hp-bot-2">0 / 0</p>
+                    <p class="habilidade-pokemon" id="bot-2-habilidade">Habilidade: Sem habilidade</p>
+                    <div class="status-visual-pokemon" id="bot-2-status-visual" hidden></div></div>
+                <div class="pokemon bot"><img id="imagem-bot-2" src="" alt="Pokémon do Bot 2"></div>
+            </article>
+            <article class="combatente" id="combatente-jogador-1">
+                <div class="pokemon jogador"><img id="imagem-jogador-1" src="" alt="Pokémon do Jogador 1"></div>
+                <div class="informacoes-pokemon"><span class="rotulo-jogador">Jogador 1</span><div class="nome-nivel"><span id="nome-jogador-1">Pokémon</span><span id="nivel-jogador-1">Lv. 50</span></div><div class="barra-hp"><div id="hp-jogador-1" class="hp-atual"></div></div><p id="texto-hp-jogador-1">0 / 0</p>
+                    <p class="habilidade-pokemon" id="jogador-1-habilidade">Habilidade: Sem habilidade</p>
+                    <div class="status-visual-pokemon" id="jogador-1-status-visual" hidden></div></div>
+            </article>
+            <article class="combatente" id="combatente-jogador-2">
+                <div class="pokemon jogador"><img id="imagem-jogador-2" src="" alt="Pokémon do Jogador 2"></div>
+                <div class="informacoes-pokemon"><span class="rotulo-jogador">Jogador 2</span><div class="nome-nivel"><span id="nome-jogador-2">Pokémon</span><span id="nivel-jogador-2">Lv. 50</span></div><div class="barra-hp"><div id="hp-jogador-2" class="hp-atual"></div></div><p id="texto-hp-jogador-2">0 / 0</p>
+                    <p class="habilidade-pokemon" id="jogador-2-habilidade">Habilidade: Sem habilidade</p>
+                    <div class="status-visual-pokemon" id="jogador-2-status-visual" hidden></div></div>
+            </article>
+        </section>
+
+        <!-- Mensagem de estado: explica de quem é a vez e o resultado das ações. -->
+        <section class="caixa-mensagem"><p id="mensagem-batalha">Prepare a dupla para começar.</p><p class="aviso-simplificacao">Aviso: esta é uma simulação educativa simplificada e não representa uma batalha oficial de Pokémon. Atributos, habilidades, itens, formas e efeitos dos golpes podem diferir das regras oficiais.</p><p class="texto-regras texto-regras-arena">Alvo único: selecione Bot 1 ou Bot 2. Golpe de área: atinge os alvos descritos pelo golpe e causa 25% menos dano se acertar mais de um. Trocas substituem o Pokémon ativo e gastam a ação. Golpes de proteção não estão implementados.</p></section>
+
+        <!-- Menu principal e menu de golpes: controlados pelo JavaScript durante os turnos. -->
+        <section class="menu-batalha" id="menu-acoes">
+            <button id="btn-lutar" type="button">Lutar</button>
+            <button id="btn-pokemon" type="button">Trocar Pokémon</button>
+            <button id="btn-fugir" type="button">Encerrar</button>
+        </section>
+        <!-- Troca: permite que o jogador escolha um Pokémon vivo da equipe reserva. -->
+        <section id="area-troca" class="area-troca" aria-label="Trocar Pokémon">
+            <h2>Escolha um Pokémon para entrar</h2>
+            <div id="opcoes-troca" class="opcoes-troca"></div>
+            <button id="btn-cancelar-troca" type="button">Voltar</button>
+        </section>
+        <section id="menu-golpes" class="menu-golpes">
+            <!-- A lista de alvos aparece depois que o jogador escolhe um golpe. -->
+            <div id="alvos-golpe" class="alvos-golpe" aria-label="Escolha o alvo do golpe"></div>
+            <button id="golpe-1" type="button">Golpe 1</button><button id="golpe-2" type="button">Golpe 2</button>
+            <button id="golpe-3" type="button">Golpe 3</button><button id="golpe-4" type="button">Golpe 4</button>
+            <button id="golpe-5" type="button" style="display:none">Golpe 5</button>
+            <button id="btn-voltar" type="button">Voltar</button>
+        </section>
+
+        <!-- Perguntas: o golpe só acerta se o jogador responder corretamente. -->
+        <section id="area-questao" class="area-questao">
+            <div class="questao"><h2>Questão</h2><p id="texto-questao">Pergunta aparecerá aqui.</p></div>
+            <div class="alternativas">
+                <button id="alternativa-0" type="button">Alternativa A</button><button id="alternativa-1" type="button">Alternativa B</button>
+                <button id="alternativa-2" type="button">Alternativa C</button><button id="alternativa-3" type="button">Alternativa D</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé do projeto. -->
+    <footer id="rodape-pagina"><h5>Pokémon Study Battle. Trabalho sem fins lucrativos. © Todos os direitos reservados.</h5></footer>
+    <script src="../js/pokemons.js"></script>
+    <script src="../js/efeitos-status-pokemon.js"></script>
+    <script src="../js/batalha-2vb.js"></script>
+    <script src="../js/habilits.js"></script>
+    <a id="atalho-scroll" class="atalho-scroll" href="#rodape-pagina" aria-label="Ir ao rodapé">↓ Ir ao rodapé</a>
+    <script src="../js/atalhos-pagina.js"></script>
+</body>
+</html>

@@ -1,0 +1,1720 @@
+/* ============================================================
+   BATALHA 1vB
+   CSS PRINCIPAL
+   ============================================================ */
+
+
+/* ============================================================
+   CONFIGURAÇÕES GERAIS
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   VARIÁVEIS DE CORES
+   ============================================================ */
+
+:root {
+
+    --cor-fundo: #dcdada;
+    --cor-principal: #9e00b6;
+    --cor-principal-2: #730189;
+    --cor-escura: #222222;
+
+    --cor-texto: rgb(51, 51, 51);
+    --cor-branca: #ffffff;
+
+    --cor-hover: #4c0553;
+    --cor-indicador: #a100b6;
+    --cor-indicador-hp: rgb(16, 179, 16);
+
+    --sombra-menu: rgba(65, 65, 65, 0.3);
+    --sombra-caixa: rgba(53, 0, 70, 0.589);
+    --sombra-forte: rgba(0, 0, 0, 0.4);
+}
+
+
+/* ============================================================
+   MODO NOTURNO
+   ============================================================ */
+
+body.dark {
+
+    /* Cores principais */
+    --cor-fundo: #313131;
+    --cor-principal: #b60000;
+    --cor-principal-2: #7a0000;
+    --cor-escura: #222222;
+
+    /* Textos */
+    --cor-texto: rgb(204, 202, 202);
+    --cor-branca: #ffffff;
+
+    /* Hover e indicadores */
+    --cor-hover: #530505;
+    --cor-indicador: #b60000;
+    --cor-indicador-hp: rgb(14, 225, 14);
+
+    /* Sombras */
+    --sombra-menu: rgba(65, 65, 65, 0.3);
+    --sombra-caixa: rgba(70, 0, 0, 0.589);
+    --sombra-forte: rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   BOTÃO MODO DIURNO / NOTURNO
+   ============================================================ */
+
+.botao-modo {
+    width: auto;
+
+    min-height: 45px;
+
+    padding: 8px 12px;
+    margin: 0;
+
+    border: 2px solid var(--cor-branca);
+    outline: none;
+
+    background-color: transparent;
+
+    color: var(--cor-branca);
+
+    text-align: center;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ============================================================
+   HOVER
+   ============================================================ */
+
+.botao-modo:hover {
+    background-color: var(--cor-branca);
+
+    color: var(--cor-principal);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 10px var(--sombra-forte);
+}
+
+
+/* ============================================================
+   CLIQUE
+   ============================================================ */
+
+.botao-modo:active {
+    transform: translateY(0);
+}
+
+
+/* ============================================================
+   TABLETS
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .botao-modo {
+        min-height: 42px;
+
+        padding: 7px 10px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* ============================================================
+   CELULARES
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .botao-modo {
+        min-height: 40px;
+
+        padding: 6px 9px;
+
+        font-size: 12px;
+
+        border-radius: 8px;
+    }
+}
+
+
+/* ============================================================
+   CELULARES MUITO PEQUENOS
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+    .botao-modo {
+        min-height: 38px;
+
+        padding: 6px 8px;
+
+        font-size: 11px;
+    }
+}
+
+/* ============================================================
+   HTML
+   ============================================================ */
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   BODY
+   ============================================================ */
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, sans-serif;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+
+    overflow-x: hidden;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* ============================================================
+   ELEMENTOS GERAIS
+   ============================================================ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ============================================================
+   ARENA
+   ============================================================ */
+
+.arena {
+    display: none;
+}
+
+
+/* ============================================================
+   BOTÕES DE TEMA DE ESTUDO
+   ============================================================ */
+
+.TemaDeEstudos {
+    width: 220px;
+    min-height: 55px;
+
+    margin: 10px;
+    padding: 12px 20px;
+
+    border: 2px solid var(--cor-principal);
+    border-radius: 10px;
+
+    background-color: var(--cor-escura);
+    color: var(--cor-texto);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ---------- Hover ---------- */
+
+.TemaDeEstudos:hover {
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+
+    border-color: var(--cor-indicador);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 10px var(--sombra-caixa);
+}
+
+
+/* ---------- Tema selecionado ---------- */
+
+.TemaDeEstudos.selecionado {
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+
+    border-color: var(--cor-indicador);
+
+    box-shadow:
+        0 0 0 3px var(--cor-hover);
+}
+
+
+/* ---------- Clique ---------- */
+
+.TemaDeEstudos:active {
+    transform: translateY(0);
+}
+
+
+/* ============================================================
+   CABEÇALHO
+   ============================================================ */
+
+header {
+    width: 100%;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    background-color: var(--cor-principal);
+
+    color: var(--cor-branca);
+
+    gap: 15px;
+}
+
+
+.logo {
+    min-width: 0;
+}
+
+.logo h1 {
+    font-size: clamp(18px, 3vw, 24px);
+
+    color: var(--cor-branca);
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   CONTROLES DO CABEÇALHO
+   ============================================================ */
+
+.botoes-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 0;
+}
+
+.botoes-header .TemaDeEstudos {
+    width: auto;
+    min-height: 45px;
+    margin: 0;
+    padding: 8px 12px;
+    border-color: var(--cor-branca);
+    background-color: transparent;
+    color: var(--cor-branca);
+    font-size: 14px;
+}
+
+.botoes-header .TemaDeEstudos:hover,
+.botoes-header .TemaDeEstudos.selecionado {
+    background-color: var(--cor-branca);
+    color: var(--cor-principal);
+    border-color: var(--cor-branca);
+}
+
+/* A arena só aparece quando o JavaScript inicia a batalha. */
+#arena-batalha {
+    display: none;
+}
+
+/* ============================================================
+   BOTÃO VOLTAR
+   ============================================================ */
+
+button.menu-voltar {
+    flex-shrink: 0;
+
+    color: var(--cor-branca);
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 16px;
+
+    padding: 10px;
+
+    border: 2px solid currentColor;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+button.menu-voltar:hover {
+    background-color: var(--cor-hover);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px var(--sombra-forte);
+}
+
+button.menu-voltar:active {
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   SELEÇÃO DE POKÉMON
+   ============================================================ */
+
+.selecao-pokemon {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+.selecao-pokemon h2 {
+    margin-bottom: 10px;
+
+    font-size: clamp(24px, 4vw, 30px);
+
+    color: var(--cor-texto);
+
+    overflow-wrap: anywhere;
+}
+
+.texto-selecao {
+    margin-bottom: 25px;
+
+    color: var(--cor-texto);
+
+    font-size: clamp(14px, 2vw, 17px);
+
+    line-height: 1.5;
+}
+
+/* ALTERADO: organiza os botões de tema dentro do container de seleção. */
+.selecao-temas-estudo {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 24px;
+}
+
+.selecao-temas-estudo h3 {
+    flex: 0 0 100%;
+    margin-bottom: 2px;
+    color: var(--cor-texto);
+    font-size: clamp(16px, 2.2vw, 20px);
+}
+
+.selecao-temas-estudo .TemaDeEstudos {
+    width: auto;
+    min-width: 150px;
+    min-height: 46px;
+    margin: 0;
+    padding: 9px 16px;
+}
+
+.selecao-temas-estudo .TemaDeEstudos.selecionado {
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+}
+
+
+/* ============================================================
+   LISTA DE POKÉMON
+   ============================================================ */
+
+.lista-pokemon {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+/* ============================================================
+   OPÇÕES DE POKÉMON
+   ============================================================ */
+
+.pokemon-opcao {
+    width: 100%;
+    min-height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    border: 2px solid var(--cor-hover);
+
+    border-radius: 12px;
+
+    background-color: var(--cor-principal-2);
+    color: var(--cor-branca);
+
+    font-size: clamp(14px, 1.8vw, 17px);
+    font-weight: bold;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    overflow-wrap: anywhere;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pokemon-opcao:hover {
+    background-color: var(--cor-principal);
+
+    border-color: var(--cor-branca);
+
+    color: var(--cor-branca);
+
+    transform: scale(1.04);
+}
+
+.pokemon-opcao:active {
+    transform: scale(0.97);
+}
+
+/* NOVO: marca os Pokémon escolhidos e mantém a escolha desmarcável ao clicar de novo. */
+.pokemon-opcao.pokemon-selecionado {
+    background-color: var(--cor-principal);
+    border-color: var(--cor-indicador);
+    color: var(--cor-branca);
+    box-shadow: 0 0 0 3px var(--sombra-forte);
+}
+
+/* NOVO: botão de confirmação da equipe. Só é exibido com seis escolhas. */
+.btn-iniciar-batalha {
+    display: none;
+    width: min(100%, 360px);
+    min-height: 54px;
+    margin: 24px auto 0;
+    padding: 12px 18px;
+    border: 2px solid var(--cor-principal);
+    border-radius: 10px;
+    background: var(--cor-principal);
+    color: var(--cor-branca);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-iniciar-batalha:hover {
+    filter: brightness(1.12);
+}
+
+.btn-iniciar-batalha:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* ============================================================
+   ARENA DE BATALHA
+   ============================================================ */
+
+.arena {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* ============================================================
+   LADOS DA BATALHA
+   ============================================================ */
+
+.lado-bot,
+.lado-jogador {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    min-height: 180px;
+}
+
+
+/* ============================================================
+   POKÉMON
+   ============================================================ */
+
+.pokemon {
+    width: 300px;
+    height: 180px;
+
+    flex-shrink: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemon img {
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* ============================================================
+   POSIÇÃO DOS POKÉMON
+   ============================================================ */
+
+.pokemon.bot {
+    order: 2;
+}
+
+.pokemon.jogador {
+    order: 1;
+}
+
+
+/* ============================================================
+   INFORMAÇÕES DOS POKÉMON
+   ============================================================ */
+
+.informacoes-pokemon {
+    width: 350px;
+    max-width: 100%;
+
+    padding: 15px;
+
+    background-color: var(--cor-escura);
+
+    border: 2px solid var(--cor-hover);
+
+    border-radius: 10px;
+
+    flex-shrink: 1;
+}
+
+.nome-nivel {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+    font-weight: bold;
+
+    color: var(--cor-texto);
+}
+
+.nome-nivel span {
+    overflow-wrap: anywhere;
+}
+
+.nome-nivel span:first-child {
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+.nome-nivel span:last-child {
+    font-size: clamp(13px, 1.7vw, 16px);
+}
+
+
+/* ============================================================
+   BARRA DE HP
+   ============================================================ */
+
+.barra-hp {
+    width: 100%;
+    height: 18px;
+
+    overflow: hidden;
+
+    background-color: var(--cor-fundo);
+
+    border-radius: 10px;
+}
+
+.hp-atual {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--cor-indicador-hp);
+
+    border-radius: 10px;
+
+    transition: width 0.4s ease;
+}
+
+.informacoes-pokemon p {
+    margin-top: 6px;
+
+    text-align: right;
+
+    font-size: 14px;
+
+    color: var(--cor-texto);
+}
+
+
+/* ============================================================
+   CAIXA DE MENSAGEM
+   ============================================================ */
+
+.caixa-mensagem {
+    width: 100%;
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px;
+
+    background-color: var(--cor-escura);
+
+    border: 2px solid var(--cor-hover);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 10px var(--sombra-menu);
+}
+
+.caixa-mensagem p {
+    width: 100%;
+
+    font-size: clamp(14px, 2vw, 18px);
+
+    line-height: 1.4;
+
+    color: var(--cor-branca);
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   MENU DE BATALHA
+   ============================================================ */
+
+.menu-batalha {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.menu-batalha button,
+.menu-golpes button {
+    width: 100%;
+    min-height: 55px;
+
+    padding: 10px;
+
+    border: 2px solid var(--cor-principal);
+
+    border-radius: 8px;
+
+    background-color: var(--cor-escura);
+    color: var(--cor-branca);
+
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: bold;
+
+    cursor: pointer;
+
+    overflow-wrap: anywhere;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.menu-batalha button:hover,
+.menu-golpes button:hover {
+    background-color: var(--cor-principal);
+
+    border-color: var(--cor-indicador);
+
+    color: var(--cor-branca);
+
+    transform: scale(1.02);
+}
+
+.menu-batalha button:active,
+.menu-golpes button:active {
+    transform: scale(0.98);
+}
+
+
+/* ============================================================
+   MENU DE GOLPES
+   ============================================================ */
+
+.menu-golpes {
+    width: 100%;
+
+    display: none;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+/* ============================================================
+   BOTÃO VOLTAR
+   ============================================================ */
+
+#btn-voltar {
+    background-color: var(--cor-hover);
+
+    color: var(--cor-branca);
+
+    border-color: var(--cor-hover);
+}
+
+#btn-voltar:hover {
+    background-color: var(--cor-principal);
+
+    border-color: var(--cor-principal);
+}
+
+
+/* ============================================================
+   ÁREA DA QUESTÃO
+   ============================================================ */
+
+.area-questao {
+    width: 100%;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background-color: var(--cor-escura);
+
+    border: 2px solid var(--cor-hover);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 15px var(--sombra-caixa);
+}
+
+
+/* ============================================================
+   QUESTÃO
+   ============================================================ */
+
+.questao {
+    width: 100%;
+
+    padding: 20px;
+
+    background-color: var(--cor-fundo);
+
+    border: 1px solid var(--cor-hover);
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.questao h2 {
+    margin-bottom: 15px;
+
+    font-size: clamp(18px, 3vw, 22px);
+
+    color: var(--cor-principal);
+
+    overflow-wrap: anywhere;
+}
+
+.questao p {
+    font-size: clamp(15px, 2.5vw, 19px);
+
+    line-height: 1.5;
+
+    color: var(--cor-texto);
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   ALTERNATIVAS
+   ============================================================ */
+
+.alternativas {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.alternativas button {
+    width: 100%;
+    min-height: 60px;
+
+    padding: 10px;
+
+    border: 2px solid var(--cor-hover);
+
+    border-radius: 8px;
+
+    background-color: var(--cor-escura);
+    color: var(--cor-branca);
+
+    font-size: clamp(14px, 2vw, 17px);
+    font-weight: bold;
+
+    cursor: pointer;
+
+    overflow-wrap: anywhere;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.alternativas button:hover {
+    background-color: var(--cor-principal);
+
+    color: var(--cor-branca);
+
+    border-color: var(--cor-principal);
+
+    transform: scale(1.02);
+}
+
+.alternativas button:active {
+    transform: scale(0.98);
+}
+
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+
+footer {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: auto;
+
+    text-align: center;
+
+    background-color: var(--cor-principal);
+
+    color: var(--cor-branca);
+
+    line-height: 1.5;
+
+    border-top: 2px solid var(--cor-hover);
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+
+/* ============================================================
+   TELAS GRANDES / TABLETS HORIZONTAIS
+   Até 1024px
+   ============================================================ */
+
+@media (max-width: 1024px) {
+
+    .selecao-pokemon,
+    .arena {
+        max-width: 95%;
+    }
+
+    .lista-pokemon {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .lado-bot,
+    .lado-jogador {
+        gap: 20px;
+    }
+
+    .pokemon {
+        width: min(28vw, 280px);
+        height: 170px;
+    }
+
+    .informacoes-pokemon {
+        width: min(36vw, 330px);
+    }
+}
+
+
+/* ============================================================
+   TABLETS
+   Até 768px
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    /* ---------- Cabeçalho ---------- */
+
+    header {
+        min-height: 65px;
+
+        padding: 12px 15px;
+
+        gap: 10px;
+    }
+
+    .botoes-header {
+        gap: 6px;
+    }
+
+    .botoes-header .TemaDeEstudos {
+        min-height: 42px;
+        padding: 7px 9px;
+        font-size: 12px;
+    }
+
+    .selecao-temas-estudo {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .selecao-temas-estudo .TemaDeEstudos {
+        min-width: min(100%, 150px);
+        min-height: 42px;
+        padding: 7px 10px;
+        font-size: 14px;
+    }
+
+    .logo h1 {
+        font-size: clamp(17px, 4vw, 22px);
+    }
+
+    button.menu-voltar {
+        font-size: 15px;
+
+        padding: 8px 10px;
+
+        border-radius: 12px;
+    }
+
+
+    /* ---------- Seleção ---------- */
+
+    .selecao-pokemon {
+        max-width: 100%;
+
+        padding: 25px 15px;
+    }
+
+    .selecao-pokemon h2 {
+        font-size: clamp(22px, 5vw, 28px);
+    }
+
+    .texto-selecao {
+        font-size: 15px;
+
+        line-height: 1.4;
+    }
+
+    .lista-pokemon {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .pokemon-opcao {
+        min-height: 90px;
+
+        padding: 12px 8px;
+
+        font-size: 15px;
+    }
+
+
+    /* ---------- Botões de tema ---------- */
+
+    .TemaDeEstudos {
+        width: min(100%, 220px);
+
+        min-height: 52px;
+
+        font-size: 16px;
+
+        margin: 8px;
+    }
+
+
+    /* ---------- Arena ---------- */
+
+    .arena {
+        max-width: 100%;
+
+        padding: 15px 12px;
+
+        gap: 15px;
+    }
+
+    .lado-bot,
+    .lado-jogador {
+        min-height: 0;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 10px;
+    }
+
+
+    /* ---------- Pokémon ---------- */
+
+    .pokemon.bot,
+    .pokemon.jogador {
+        order: initial;
+    }
+
+    .pokemon {
+        width: min(55vw, 230px);
+        height: 150px;
+    }
+
+
+    /* ---------- Informações ---------- */
+
+    .informacoes-pokemon {
+        width: 100%;
+
+        max-width: 420px;
+
+        padding: 12px;
+    }
+
+    .nome-nivel span:first-child {
+        font-size: 17px;
+    }
+
+    .nome-nivel span:last-child {
+        font-size: 14px;
+    }
+
+    .barra-hp {
+        height: 16px;
+    }
+
+    .informacoes-pokemon p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- Mensagem ---------- */
+
+    .caixa-mensagem {
+        min-height: 65px;
+
+        padding: 14px;
+    }
+
+    .caixa-mensagem p {
+        font-size: 16px;
+    }
+
+
+    /* ---------- Menus ---------- */
+
+    .menu-batalha,
+    .menu-golpes,
+    .alternativas {
+        gap: 10px;
+    }
+
+    .menu-batalha button,
+    .menu-golpes button,
+    .alternativas button {
+        min-height: 52px;
+
+        padding: 10px;
+
+        font-size: 16px;
+    }
+
+
+    /* ---------- Questão ---------- */
+
+    .area-questao {
+        padding: 15px;
+
+        gap: 15px;
+    }
+
+    .questao {
+        padding: 15px;
+    }
+
+    .questao h2 {
+        font-size: 20px;
+    }
+
+    .questao p {
+        font-size: 17px;
+
+        line-height: 1.4;
+    }
+}
+
+
+/* ============================================================
+   CELULARES
+   Até 480px
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    /* ---------- Cabeçalho ---------- */
+
+    header {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .logo h1 {
+        font-size: 19px;
+    }
+
+    .botoes-header {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .botoes-header .TemaDeEstudos,
+    button.menu-voltar,
+    .botao-modo {
+        min-height: 40px;
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+
+    .botoes-header .TemaDeEstudos {
+        flex: 1 1 auto;
+    }
+
+    .selecao-temas-estudo {
+        gap: 7px;
+        margin-bottom: 18px;
+    }
+
+    .selecao-temas-estudo .TemaDeEstudos {
+        flex: 1 1 100%;
+        width: min(100%, 280px);
+        min-width: 0;
+        min-height: 44px;
+    }
+
+    button.menu-voltar {
+        font-size: 14px;
+
+        padding: 7px 9px;
+    }
+
+
+    /* ---------- Seleção ---------- */
+
+    .selecao-pokemon {
+        padding: 20px 10px;
+    }
+
+    .selecao-pokemon h2 {
+        font-size: 23px;
+    }
+
+    .texto-selecao {
+        margin-bottom: 18px;
+
+        font-size: 14px;
+    }
+
+    .lista-pokemon {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .pokemon-opcao {
+        min-height: 65px;
+
+        padding: 10px;
+
+        font-size: 15px;
+    }
+
+
+    /* ---------- Botões de tema ---------- */
+
+    .TemaDeEstudos {
+        width: 100%;
+
+        max-width: 280px;
+
+        min-height: 50px;
+
+        margin: 6px auto;
+
+        font-size: 15px;
+    }
+
+
+    /* ---------- Arena ---------- */
+
+    .arena {
+        padding: 10px;
+
+        gap: 12px;
+    }
+
+
+    /* ---------- Pokémon ---------- */
+
+    .pokemon {
+        width: min(65vw, 210px);
+
+        height: 125px;
+    }
+
+
+    /* ---------- Informações ---------- */
+
+    .informacoes-pokemon {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 10px;
+    }
+
+    .nome-nivel {
+        gap: 8px;
+    }
+
+    .nome-nivel span:first-child {
+        font-size: 15px;
+    }
+
+    .nome-nivel span:last-child {
+        font-size: 13px;
+    }
+
+    .informacoes-pokemon p {
+        font-size: 12px;
+    }
+
+    .barra-hp {
+        height: 14px;
+    }
+
+
+    /* ---------- Mensagem ---------- */
+
+    .caixa-mensagem {
+        min-height: 60px;
+
+        padding: 12px;
+    }
+
+    .caixa-mensagem p {
+        font-size: 14px;
+
+        line-height: 1.4;
+    }
+
+
+    /* ---------- Menus ---------- */
+
+    .menu-batalha,
+    .menu-golpes,
+    .alternativas {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .menu-batalha button,
+    .menu-golpes button,
+    .alternativas button {
+        min-height: 50px;
+
+        font-size: 15px;
+    }
+
+
+    /* ---------- Questão ---------- */
+
+    .area-questao {
+        padding: 10px;
+
+        gap: 10px;
+    }
+
+    .questao {
+        padding: 12px;
+    }
+
+    .questao h2 {
+        font-size: 18px;
+    }
+
+    .questao p {
+        font-size: 15px;
+
+        line-height: 1.4;
+    }
+
+
+    /* ---------- Rodapé ---------- */
+
+    footer {
+        padding: 12px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* ============================================================
+   CELULARES MUITO PEQUENOS
+   Até 360px
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+    header {
+        padding: 10px;
+    }
+
+    .logo h1 {
+        font-size: 17px;
+    }
+
+    button.menu-voltar {
+        font-size: 13px;
+
+        padding: 6px 8px;
+    }
+
+    .selecao-pokemon h2 {
+        font-size: 21px;
+    }
+
+    .texto-selecao {
+        font-size: 13px;
+    }
+
+    .pokemon {
+        width: 180px;
+
+        height: 110px;
+    }
+
+    .informacoes-pokemon {
+        padding: 9px;
+    }
+
+    .nome-nivel span:first-child {
+        font-size: 14px;
+    }
+
+    .nome-nivel span:last-child {
+        font-size: 12px;
+    }
+
+    .menu-batalha button,
+    .menu-golpes button,
+    .alternativas button {
+        min-height: 48px;
+
+        font-size: 14px;
+    }
+
+    .caixa-mensagem p {
+        font-size: 13px;
+    }
+
+    .questao h2 {
+        font-size: 17px;
+    }
+
+    .questao p {
+        font-size: 14px;
+    }
+}
+
+
+/* ============================================================
+   DISPOSITIVOS SEM HOVER
+   Celulares e tablets com toque
+   ============================================================ */
+
+@media (hover: none) {
+
+    .pokemon-opcao:hover,
+    .menu-batalha button:hover,
+    .menu-golpes button:hover,
+    .alternativas button:hover,
+    button.menu-voltar:hover,
+    .TemaDeEstudos:hover {
+        transform: none;
+    }
+
+    .pokemon-opcao:active,
+    .menu-batalha button:active,
+    .menu-golpes button:active,
+    .alternativas button:active,
+    .TemaDeEstudos:active {
+        transform: scale(0.97);
+    }
+}
+
+
+/* ============================================================
+   ACESSIBILIDADE
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* NOVO: estados do menu de troca. Pokémon fora da equipe inicial ou já
+   derrotados ficam claramente indisponíveis; o botão de retorno só aparece
+   durante a troca voluntária aberta pelo menu Pokémon. */
+.pokemon-opcao:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.pokemon-opcao:disabled:hover {
+    background-color: var(--cor-escura);
+    border-color: var(--cor-hover);
+    color: var(--cor-texto);
+}
+
+.botao-cancelar-troca {
+    width: min(100%, 320px);
+    min-height: 48px;
+    margin: 18px auto 0;
+    padding: 10px 16px;
+    border: 2px solid var(--cor-principal);
+    border-radius: 8px;
+    background: var(--cor-escura);
+    color: var(--cor-texto);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-cancelar-troca:hover {
+    background: var(--cor-principal);
+    color: var(--cor-branca);
+}
+
+.tela-passagem{display:none;width:min(92%,620px);min-height:280px;margin:60px auto;padding:32px;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;color:var(--cor-texto);background:var(--cor-escura);border:2px solid var(--cor-principal);border-radius:14px}.tela-passagem h2{color:var(--cor-principal)}.tela-passagem p{line-height:1.6}.tela-passagem button{min-height:52px;padding:12px 24px;border:0;border-radius:9px;background:var(--cor-principal);color:var(--cor-branca);font-size:17px;font-weight:bold;cursor:pointer}
+
+.rotulo-jogador{display:block;margin-bottom:6px;color:var(--cor-principal);font-size:12px;font-weight:bold;text-transform:uppercase;letter-spacing:.06em}
+
+.aviso-salvamento{margin:-10px 0 18px;text-align:center;color:var(--cor-texto);font-size:13px;opacity:.8}
+
+/* Sinaliza a equipe própria e o Pokémon que está atualmente em campo durante a troca. */
+.pokemon-opcao.pokemon-da-equipe:not(:disabled) {
+    border-color: var(--cor-principal);
+}
+.pokemon-opcao.pokemon-da-equipe:not(.pokemon-em-campo)::after {
+    content: "DA EQUIPE";
+    display: block;
+    margin-top: 5px;
+    color: var(--cor-principal);
+    font-size: 10px;
+    letter-spacing: .05em;
+}
+.pokemon-opcao.pokemon-em-campo {
+    border-color: var(--cor-indicador);
+    box-shadow: 0 0 0 3px var(--sombra-forte);
+}
+.pokemon-opcao.pokemon-em-campo::after {
+    content: "EM CAMPO";
+    display: block;
+    margin-top: 5px;
+    color: var(--cor-indicador);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .05em;
+}
+
+.pokemon-opcao.pokemon-da-equipe:not(.pokemon-em-campo):not(.pokemon-derrotado)::after {
+    content: "NA EQUIPE";
+}
+.pokemon-opcao.pokemon-derrotado::after {
+    content: "DERROTADO";
+    display: block;
+    margin-top: 5px;
+    color: #ff6b6b;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.aviso-simplificacao { max-width: 980px; margin: .75rem auto; padding: .75rem 1rem; border-left: 4px solid #f0b429; border-radius: .35rem; background: rgba(240,180,41,.12); font-size: .92rem; line-height: 1.5; }
+
+/* Habilidade e condição de estado exibidas sob os pontos de vida. */
+.habilidade-pokemon{margin:3px 0 2px;font-size:.78rem;font-weight:700;line-height:1.25;}
+.status-visual-pokemon{display:flex;align-items:center;gap:6px;min-height:24px;margin:2px 0 0;font-size:.78rem;font-weight:700;}
+.status-visual-pokemon[hidden]{display:none;}
+.icone-status-pokemon{display:inline-block;width:22px;height:22px;flex:0 0 22px;object-fit:contain;}
+.tag-pokemon{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:999px;background:#7b2cbf;color:#fff;font-size:.68rem;font-weight:800;line-height:1.2;vertical-align:middle;}
+
+
+/* Atalhos para navegar entre o topo e o rodapé durante a seleção. */
+.atalhos-pagina{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:1100px;margin:12px auto;padding:0 16px;}
+.atalhos-pagina a{display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:999px;background:var(--cor-principal,#7b2cbf);color:#fff;text-decoration:none;font-weight:700;box-shadow:0 2px 8px #0002;}
+.atalhos-pagina a:hover,.atalhos-pagina a:focus-visible{filter:brightness(1.12);text-decoration:underline;}
+.atalhos-pagina-final{margin-top:18px;margin-bottom:18px;}
+
+
+/* Atalho flutuante para navegar entre o topo e o rodapé. */
+.atalho-scroll { position: fixed; right: 22px; bottom: 22px; z-index: 99999; display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 16px; border: 2px solid #fff; border-radius: 999px; background: var(--cor-principal, #7b2cbf); color: #fff; text-decoration: none; font-weight: 800; box-shadow: 0 4px 16px #0005; cursor: pointer; }
+.atalho-scroll:hover, .atalho-scroll:focus-visible { transform: translateY(-3px); filter: brightness(1.12); outline: 3px solid #ffd166; outline-offset: 2px; }
+@media (max-width: 600px) { .atalho-scroll { right: 12px; bottom: 12px; min-height: 42px; padding: 9px 13px; font-size: .9rem; } }
